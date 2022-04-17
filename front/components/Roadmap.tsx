@@ -103,7 +103,7 @@ export default function Roadmap() {
         <h2 id="roadmap" className="text-indigo-700 pt-20 text-6xl text-center">
           ROADMAP
         </h2>
-        {roadmap.map((phase, index) => (
+        {roadmap.map((phase) => (
           <div
             key={phase.title}
             className="my-20 md:gap-10 flex flex-col md:flex-row md:odd:flex-row-reverse"
@@ -118,7 +118,7 @@ export default function Roadmap() {
             </div>
             <p className="bg-indigo-700 rounded-3xl bg-opacity-70 p-4 text-white mx-2 text-center flex flex-col gap-2 max-w-lg text-lg md:text-2xl md:my-auto">
               {phase.description.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <span key={index}>{paragraph}</span>
               ))}
             </p>
           </div>

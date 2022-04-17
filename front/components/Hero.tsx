@@ -1,20 +1,8 @@
-import React from "react";
-import toast from "react-hot-toast";
+import React, { useState } from "react";
+import MintModal from "./MintModal";
 
 export default function Hero() {
-  const handleMint = () => {
-    toast.error("Minting is not available yet.", {
-      style: {
-        backgroundColor: "#4338CA",
-        borderRadius: "25px",
-        color: "#FBBF24",
-      },
-      iconTheme: {
-        secondary: "#4338CA",
-        primary: "#FBBF24",
-      },
-    });
-  };
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   return (
     <>
       <p className="font-bangers text-xl font-bold absolute top-28 left-8 text-white">
@@ -26,8 +14,11 @@ export default function Hero() {
         </h1>
 
         <div className="grid place-items-center mt-10 lg:mr-auto lg:ml-64">
-          <button className="yellow-button" onClick={handleMint}>
-            MINT SOON
+          <button
+            className="yellow-button"
+            onClick={() => setIsModalOpen(true)}
+          >
+            MINT
           </button>
           <p className="text-sm font-roboto text-center mt-2">
             0.07ETH | MAX 2 PER TRANSACTION
@@ -39,6 +30,7 @@ export default function Hero() {
         src="/dinos/dino.gif"
         alt="Dino gif"
       />
+      <MintModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </>
   );
 }
