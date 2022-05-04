@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
-import { ethers } from "ethers";
+import { ethers, wait } from "ethers";
 import RollingDinos from "../util/RollingDinos.json";
 import toast from "react-hot-toast";
 
@@ -39,6 +39,20 @@ const MintModal = ({ isModalOpen, setIsModalOpen }) => {
     });
   };
 
+  const handleSuccess = (info: string) => {
+    toast.success(info, {
+      duration: 5000,
+      style: {
+        backgroundColor: "#4338CA",
+        borderRadius: "25px",
+        color: "#FBBF24",
+      },
+      iconTheme: {
+        secondary: "#4338CA",
+        primary: "#FBBF24",
+      },
+    });
+  };
   const checkIfAccountConnected = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -74,9 +88,29 @@ const MintModal = ({ isModalOpen, setIsModalOpen }) => {
           value: ethers.utils.parseEther((quantity * 0.0069).toString()),
         });
 
-        result.wait();
+        toast.loading("Processing transaction", {
+          style: {
+            backgroundColor: "#4338CA",
+            borderRadius: "25px",
+            color: "#FBBF24",
+          },
+          iconTheme: {
+            secondary: "#4338CA",
+            primary: "#FBBF24",
+          },
+        });
+
+        await result.wait();
+
+        toast.dismiss();
+
+        handleSuccess("Dinos are rolling your way. Check your wallet");
       } catch (err) {
-        handleError(err?.error?.message);
+        handleError(
+          err?.error?.message
+            ? err.error.message
+            : "Error while processing transaction"
+        );
       }
     } else {
       handleError("Please connect your wallet");
@@ -121,7 +155,7 @@ const MintModal = ({ isModalOpen, setIsModalOpen }) => {
         <p className="font-bangers text-3xl text-indigo-700 text-center">
           QUANTITY
         </p>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 max-w-[230px] flex-wrap justify-center">
           <button
             type="button"
             onClick={() => setQuantity(1)}
@@ -148,6 +182,24 @@ const MintModal = ({ isModalOpen, setIsModalOpen }) => {
             }`}
           >
             3
+          </button>
+          <button
+            type="button"
+            onClick={() => setQuantity(4)}
+            className={`quantity-button ${
+              quantity === 4 ? "!bg-opacity-100" : ""
+            }`}
+          >
+            4
+          </button>
+          <button
+            type="button"
+            onClick={() => setQuantity(5)}
+            className={`quantity-button ${
+              quantity === 5 ? "!bg-opacity-100" : ""
+            }`}
+          >
+            5
           </button>
         </div>
       </div>
