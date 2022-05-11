@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
-import { ethers, wait } from "ethers";
+import { ethers } from "ethers";
 import RollingDinos from "../util/RollingDinos.json";
 import toast from "react-hot-toast";
 
