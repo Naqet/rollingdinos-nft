@@ -15,10 +15,7 @@ export default function Roadmap() {
     {
       title: "Keep rolling",
       percent: "10%",
-      description: [
-        "Launch of official holder exclusive Rolling Dino merch shop.",
-        "3 Rolling Dino NFTs giveaway for all Discord members.",
-      ],
+      description: ["3 Rolling Dino NFTs giveaway for all Discord members."],
     },
     {
       title: "Roll another tree",
@@ -29,17 +26,10 @@ export default function Roadmap() {
       ],
     },
     {
-      title: "Come together - roll together",
-      percent: "50%",
-      description: [
-        "Exclusive Rolling Dinos NFT holder meetup. Starting to plan in-person events in different places around the globe.",
-      ],
-    },
-    {
       title: "Revive dinos",
       percent: "75%",
       description: [
-        "5 ETH Giveaway - 1 ETH for 5 Rolling Dino holders each.",
+        "1 ETH Giveaway - 0.2 ETH for 5 Rolling Dino holders each.",
         "Introducing the $ROLL token which can be obtained by staking a Rolling Dino NFT Holders will be able to mint 3d VX versions of their own Rolling Object along with a new VX Dino version using the $ROLL token!",
         "They will be playable in the metaverse giving lots of new possibilities such as special community events along with PvP which enables a play-to-earn mechanism and much more!",
       ],
@@ -75,7 +65,7 @@ export default function Roadmap() {
         src="/sections/roadmap-top.svg"
         alt="Planet"
       />
-      <section className="min-h-screen min-w-full grid place-items-center roadmap font-bangers pb-10 md:pb-12 lg:pb-20 xl:pb-0">
+      <section className="min-h-screen min-w-full grid place-items-center roadmap font-bangers pb-10 md:pb-12 lg:pb-20 xl:pb-48">
         <h2 className="text-indigo-700 text-4xl grid place-items-center mb-10 xl:text-6xl">
           <p>KEEP AN EYE OPEN -</p>
           <p>THEY ARE ROLLING YOUR WAY</p>
@@ -91,7 +81,7 @@ export default function Roadmap() {
             />
           </div>
           <p className="bg-indigo-700 rounded-3xl bg-opacity-70 max-w-lg p-4 text-white mx-2 text-center lg:m-auto xl:text-2xl xl:max-w-xl xl:translate-x-40">
-            Welcome to a collection of 10,000 Rolling Dinos NFTs - unique
+            Welcome to a collection of 6900 Rolling Dinos NFTs - unique
             non-fungible tokens living on the Etherium blockchain. Dinosaurs are
             extinct, but they keep on rolling. Each rolling dino is
             programmatically generated from over 100 possible traits, including

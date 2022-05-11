@@ -21,7 +21,7 @@ export default function Hero() {
             MINT
           </button>
           <p className="text-sm font-roboto text-center mt-2">
-            0.07ETH | MAX 2 PER TRANSACTION
+            0.0069ETH | MAX 5 PER TRANSACTION
           </p>
         </div>
       </section>
